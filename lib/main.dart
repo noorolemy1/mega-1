@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mega/mega_screen.dart';
 
 void main() {
@@ -8,10 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backwardsCompatibility: false, // 1
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       home: MegaScreen(),
     );
