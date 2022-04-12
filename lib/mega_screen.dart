@@ -32,7 +32,7 @@ class _MegaScreenState extends State<MegaScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.all(5),
         child: Column(
           children: [
             const Center(
