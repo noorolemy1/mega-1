@@ -48,7 +48,7 @@ class _MegaScreenState extends State<MegaScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 10, top: 40),
+                        padding: const EdgeInsets.only( top: 40),
                         child: Stack(
                           children: [
                             Container(
@@ -82,7 +82,7 @@ class _MegaScreenState extends State<MegaScreen> {
                                   const SizedBox(
                                     height: 20,
                                   ),
-                                  if (isSwitchDoor == false)
+                                  if (isSwitchDoor == true)
                                     Row(
                                       children: const [
                                         CircleAvatar(
@@ -99,7 +99,7 @@ class _MegaScreenState extends State<MegaScreen> {
                                         ),
                                       ],
                                     ),
-                                  if (isSwitchDoor == true)
+                                  if (isSwitchDoor == false)
                                     Row(
                                       children: [
                                         CircleAvatar(
@@ -145,7 +145,7 @@ class _MegaScreenState extends State<MegaScreen> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 40, right: 15),
+                    padding: const EdgeInsets.only(top: 40,),
                     child: Stack(
                       alignment: AlignmentDirectional.center,
                       children: [
@@ -189,7 +189,7 @@ class _MegaScreenState extends State<MegaScreen> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              if (smoke == false)
+                              if (smoke == true)
                                 Row(
                                   children: const [
                                     CircleAvatar(
@@ -206,7 +206,7 @@ class _MegaScreenState extends State<MegaScreen> {
                                     ),
                                   ],
                                 ),
-                              if (smoke == true)
+                              if (smoke == false)
                                 Row(
                                   children: [
                                     CircleAvatar(
@@ -253,211 +253,205 @@ class _MegaScreenState extends State<MegaScreen> {
             Row(
               children: [
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only( right: 15),
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Container(
-                          height: 210,
-                          width: 170,
-                          decoration: BoxDecoration(
-                              color: Colors.black87.withOpacity(.9),
-                              borderRadius: BorderRadius.circular(27)),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 170,
+                        decoration: BoxDecoration(
+                            color: Colors.black87.withOpacity(.9),
+                            borderRadius: BorderRadius.circular(27)),
+                      ),
+                      Container(
+                        height: 205,
+                        width: 165,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
                         ),
-                        Container(
-                          height: 205,
-                          width: 165,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(25),
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 20,
-                          ),
-                          child: Column(
-                            children: [
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              textBaseline: TextBaseline.alphabetic,
+                              children: const [
+                                Icon(Icons.door_front_door,
+                                    color: Colors.black, size: 50),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 5),
+                                  child: Text(
+                                    'Fire',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 30),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            if (fire == true)
                               Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                textBaseline: TextBaseline.alphabetic,
                                 children: const [
-                                  Icon(Icons.door_front_door,
-                                      color: Colors.black, size: 50),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text(
-                                      'Fire',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 30),
-                                    ),
-                                  )
+                                  CircleAvatar(
+                                    backgroundColor: Colors.green,
+                                    radius: 5,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    'Normall',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 25),
+                                  ),
                                 ],
                               ),
-                              const SizedBox(
-                                height: 20,
+                            if (fire == false)
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.redAccent[700],
+                                    radius: 5,
+                                  ),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  const Text(
+                                    'close',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 25),
+                                  ),
+                                ],
                               ),
-                              if (fire == false)
-                                Row(
-                                  children: const [
-                                    CircleAvatar(
-                                      backgroundColor: Colors.green,
-                                      radius: 5,
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(
-                                      'Normall',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 25),
-                                    ),
-                                  ],
-                                ),
-                              if (fire == true)
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundColor: Colors.redAccent[700],
-                                      radius: 5,
-                                    ),
-                                    const SizedBox(
-                                      width: 15,
-                                    ),
-                                    const Text(
-                                      'close',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 25),
-                                    ),
-                                  ],
-                                ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15, left: 30),
-                                child: Row(
-                                  children: [
-                                    CustomSwitch(
-                                      value: fire,
-                                      activeColor: Colors.blue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          fire = value;
-                                        });
-                                        print(value);
-                                      },
-                                    ),
-                                  ],
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15, left: 30),
+                              child: Row(
+                                children: [
+                                  CustomSwitch(
+                                    value: fire,
+                                    activeColor: Colors.blue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        fire = value;
+                                      });
+                                      print(value);
+                                    },
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 15),
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Container(
-                          height: 210,
-                          width: 170,
-                          decoration: BoxDecoration(
-                              color: Colors.black87.withOpacity(.9),
-                              borderRadius: BorderRadius.circular(27)),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Container(
+                        height: 210,
+                        width: 170,
+                        decoration: BoxDecoration(
+                            color: Colors.black87.withOpacity(.9),
+                            borderRadius: BorderRadius.circular(27)),
+                      ),
+                      Container(
+                        height: 205,
+                        width: 165,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
                         ),
-                        Container(
-                          height: 205,
-                          width: 165,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(25),
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 20,
-                          ),
-                          child: Column(
-                            children: [
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              textBaseline: TextBaseline.alphabetic,
+                              children: const [
+                                Icon(Icons.door_front_door,
+                                    color: Colors.black, size: 50),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 5),
+                                  child: Text(
+                                    'Water',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 30),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            if (water == true)
                               Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                textBaseline: TextBaseline.alphabetic,
                                 children: const [
-                                  Icon(Icons.door_front_door,
-                                      color: Colors.black, size: 50),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text(
-                                      'Water',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 30),
-                                    ),
-                                  )
+                                  CircleAvatar(
+                                    backgroundColor: Colors.green,
+                                    radius: 5,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    'Normall',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 25),
+                                  ),
                                 ],
                               ),
-                              const SizedBox(
-                                height: 20,
+                            if (water == false)
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.redAccent[700],
+                                    radius: 5,
+                                  ),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  const Text(
+                                    'close',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 25),
+                                  ),
+                                ],
                               ),
-                              if (water == false)
-                                Row(
-                                  children: const [
-                                    CircleAvatar(
-                                      backgroundColor: Colors.green,
-                                      radius: 5,
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Text(
-                                      'Normall',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 25),
-                                    ),
-                                  ],
-                                ),
-                              if (water == true)
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundColor: Colors.redAccent[700],
-                                      radius: 5,
-                                    ),
-                                    const SizedBox(
-                                      width: 15,
-                                    ),
-                                    const Text(
-                                      'close',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 25),
-                                    ),
-                                  ],
-                                ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 15, left: 30),
-                                child: Row(
-                                  children: [
-                                    CustomSwitch(
-                                      value: water,
-                                      activeColor: Colors.blue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          water = value;
-                                        });
-                                        print(value);
-                                      },
-                                    ),
-                                  ],
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15, left: 30),
+                              child: Row(
+                                children: [
+                                  CustomSwitch(
+                                    value: water,
+                                    activeColor: Colors.blue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        water = value;
+                                      });
+                                      print(value);
+                                    },
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],
