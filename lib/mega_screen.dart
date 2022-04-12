@@ -1,10 +1,19 @@
+import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MegaScreen extends StatelessWidget {
-  const MegaScreen({Key? key}) : super(key: key);
 
+
+class MegaScreen extends StatefulWidget {
+  const MegaScreen({Key key}) : super(key: key);
+
+  @override
+  State<MegaScreen> createState() => _MegaScreenState();
+}
+
+class _MegaScreenState extends State<MegaScreen> {
+  bool isSwitch = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +73,7 @@ class MegaScreen extends StatelessWidget {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -80,9 +89,26 @@ class MegaScreen extends StatelessWidget {
                                 'Normall',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 25),
-                              )
+                              ),
                             ],
-                          )
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10,left: 30),
+                            child: Row(
+                              children: [
+                                CustomSwitch(
+                                  value: isSwitch,
+                                  activeColor: Colors.blue,
+                                  onChanged: (value){
+                                    setState(() {
+                                      isSwitch = value;
+                                    });
+                                    print(value);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -96,8 +122,3 @@ class MegaScreen extends StatelessWidget {
     );
   }
 }
-// gradient: const LinearGradient(
-//   colors: [Colors.white, Colors.black],
-//   begin: Alignment.bottomCenter,
-//   end: Alignment.topCenter,
-// ),
