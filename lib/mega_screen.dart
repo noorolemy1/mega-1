@@ -1,10 +1,10 @@
-import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 class MegaScreen extends StatefulWidget {
-  const MegaScreen({Key key}) : super(key: key);
+  const MegaScreen({Key? key}) : super(key: key);
 
   @override
   State<MegaScreen> createState() => _MegaScreenState();
@@ -118,18 +118,36 @@ class _MegaScreenState extends State<MegaScreen> {
                                     ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(top: 15, left: 30),
+                                        const EdgeInsets.only(top: 15,left: 10),
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                        CustomSwitch(
-                                          value: isSwitchDoor,
-                                          activeColor: Colors.blue,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              isSwitchDoor = value;
-                                            });
-                                            print(value);
-                                          },
+                                        Container(
+                                          child: FlutterSwitch(
+                                            activeTextColor: Colors.white,
+                                            inactiveTextColor: Colors.white,
+                                            activeColor: Colors.black,
+                                            inactiveColor: Colors.black,
+                                            width: 97.0,
+                                            height: 42.0,
+                                            valueFontSize: 25.0,
+                                            toggleSize: 35.0,
+                                            value: isSwitchDoor,
+                                            borderRadius: 25.0,
+                                            padding: 9.0,
+                                            showOnOff: true,
+                                            onToggle: (val) {
+                                              setState(() {
+                                                isSwitchDoor = val;
+                                              });
+                                            },
+                                          ),
+                                          decoration: BoxDecoration(
+                                              color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(30)
+                                          ),
+                                          width: 100.0,
+                                          height: 45.0,
                                         ),
                                       ],
                                     ),
@@ -224,18 +242,38 @@ class _MegaScreenState extends State<MegaScreen> {
                                   ],
                                 ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 15, left: 30),
+                                padding:
+                                const EdgeInsets.only(top: 15,left: 10),
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    CustomSwitch(
-                                      value: smoke,
-                                      activeColor: Colors.blue,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          smoke = value;
-                                        });
-                                        print(value);
-                                      },
+                                    Container(
+                                      child: FlutterSwitch(
+                                        toggleColor: Colors.black,
+                                        activeTextColor: Colors.black,
+                                        inactiveTextColor: Colors.black,
+                                        activeColor: Colors.white,
+                                        inactiveColor: Colors.white,
+                                        width: 97.0,
+                                        height: 42.0,
+                                        valueFontSize: 25.0,
+                                        toggleSize: 35.0,
+                                        value: smoke,
+                                        borderRadius: 25.0,
+                                        padding: 9.0,
+                                        showOnOff: true,
+                                        onToggle: (val) {
+                                          setState(() {
+                                            smoke = val;
+                                          });
+                                        },
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius: BorderRadius.circular(30)
+                                      ),
+                                      width: 100.0,
+                                      height: 45.0,
                                     ),
                                   ],
                                 ),
@@ -331,18 +369,38 @@ class _MegaScreenState extends State<MegaScreen> {
                                 ],
                               ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 30),
+                              padding:
+                              const EdgeInsets.only(top: 15,left: 10),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  CustomSwitch(
-                                    value: fire,
-                                    activeColor: Colors.blue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        fire = value;
-                                      });
-                                      print(value);
-                                    },
+                                  Container(
+                                    child: FlutterSwitch(
+                                      toggleColor: Colors.black,
+                                      activeTextColor: Colors.black,
+                                      inactiveTextColor: Colors.black,
+                                      activeColor: Colors.white,
+                                      inactiveColor: Colors.white,
+                                      width: 97.0,
+                                      height: 42.0,
+                                      valueFontSize: 25.0,
+                                      toggleSize: 35.0,
+                                      value: fire,
+                                      borderRadius: 25.0,
+                                      padding: 9.0,
+                                      showOnOff: true,
+                                      onToggle: (val) {
+                                        setState(() {
+                                          fire = val;
+                                        });
+                                      },
+                                    ),
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(30)
+                                    ),
+                                    width: 100.0,
+                                    height: 45.0,
                                   ),
                                 ],
                               ),
@@ -431,22 +489,46 @@ class _MegaScreenState extends State<MegaScreen> {
                                   ),
                                 ],
                               ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15, left: 30),
-                              child: Row(
-                                children: [
-                                  CustomSwitch(
-                                    value: water,
-                                    activeColor: Colors.blue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        water = value;
-                                      });
-                                      print(value);
-                                    },
+                            Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                  const EdgeInsets.only(top: 15,left: 10),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        child: FlutterSwitch(
+                                          toggleColor: Colors.black,
+                                          activeTextColor: Colors.black,
+                                          inactiveTextColor: Colors.black,
+                                          activeColor: Colors.white,
+                                          inactiveColor: Colors.white,
+                                          width: 97.0,
+                                          height: 42.0,
+                                          valueFontSize: 25.0,
+                                          toggleSize: 35.0,
+                                          value: water,
+                                          borderRadius: 25.0,
+                                          padding: 9.0,
+                                          showOnOff: true,
+                                          onToggle: (val) {
+                                            setState(() {
+                                              water = val;
+                                            });
+                                          },
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius: BorderRadius.circular(30)
+                                        ),
+                                        width: 100.0,
+                                        height: 45.0,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
