@@ -15,8 +15,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          backwardsCompatibility: false, // 1
-          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
       ),
       debugShowCheckedModeBanner: false,
@@ -24,13 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//CustomSwitch(
-//                                           value: isSwitchDoor,
-//                                           activeColor: Colors.blue,
-//                                           onChanged: (value) {
-//                                             setState(() {
-//                                               isSwitchDoor = value;
-//                                             });
-//                                             print(value);
-//                                           },
-//                                         ),
